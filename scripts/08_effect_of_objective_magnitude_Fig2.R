@@ -122,7 +122,7 @@ logdur_as_logobj <- ggplot() +
   # add regression line and equation
   geom_smooth(data = df_dur, aes(obj_est, c(ME),),  method = lm, se = TRUE, color = '#66CCEE', fill = '#66CCEE') +
   # annotate("text", x = 10.25, y = dur_point_of_intersect-10, label = "log(y) = 0.11 + 0.94*log(x)", col = "#66CCEE")+
-  # annotate("text", x = 6.5, y = dur_point_of_intersect-20, label = "R² = 0.91", col = "#66CCEE")+
+  # annotate("text", x = 6.5, y = dur_point_of_intersect-20, label = "RÂ² = 0.91", col = "#66CCEE")+
   theme_classic() +
   
   # add the point of subjective equality
@@ -230,7 +230,7 @@ logdist_as_obj <- ggplot() +
   stat_regline_equation(label.x = 15, label.y = 540, data = df_dist, aes(obj_est, c(ME), label = ..eq.label..), color = '#EE6677', size = 6) + # the parameter might not be good, it would be better to get the values from the model 
   stat_regline_equation(label.x = 15, label.y = 510, data = df_dist, aes(obj_est, c(ME), label = ..rr.label..), color = '#EE6677', size = 6) +  # the parameter might not be good, it would be better to get the values from the model
   # annotate("text", x = 9, y = dist_point_of_intersect-50, label = "log(y) = 0.6 + 0.75*log(x)", col = "#EE6677")+
-  # annotate("text", x = 4.7, y = dist_point_of_intersect-95, label = "R² = 0.85", col = "#EE6677")+
+  # annotate("text", x = 4.7, y = dist_point_of_intersect-95, label = "RÂ² = 0.85", col = "#EE6677")+
   
   
   # add the point of subjective equality
@@ -341,7 +341,7 @@ logspd_inst_as_obj <- ggplot() +
   stat_regline_equation(label.x = 10, label.y = 340, data = df_spdinst, aes(obj_est, c(ME), label = ..eq.label..), color = '#228833', size = 6) + # the parameter might not be good, it would be better to get the values from the model 
   stat_regline_equation(label.x = 10, label.y = 320, data = df_spdinst, aes(obj_est, c(ME), label = ..rr.label..), color = '#228833', size = 6) +  # the parameter might not be good, it would be better to get the values from the model
   # annotate("text", x = 64, y = 300, label = "log(y) = 0.53 + 0.76*log(x)", col = "#228833")+
-  # annotate("text", x = 47, y = 270, label = "R² = 0.64", col = "#228833")+
+  # annotate("text", x = 47, y = 270, label = "RÂ² = 0.64", col = "#228833")+
   
   # add the point of subjective equality
   geom_segment(aes(x = 0, y = spd_inst_point_of_intersect, xend = spd_inst_point_of_intersect , yend = spd_inst_point_of_intersect), linetype = "dashed", color = "red") +
@@ -454,7 +454,7 @@ logspd_mean_as_obj <- ggplot() +
   stat_regline_equation(label.x = 10, label.y = 420, data = df_spdave, aes(obj_est, c(ME), label = ..eq.label..), color = '#CCBB44', size = 6) + # the parameter might not be good, it would be better to get the values from the model 
   stat_regline_equation(label.x = 10, label.y = 320, data = df_spdave, aes(obj_est, c(ME), label = ..rr.label..), color = '#CCBB44', size = 6) +  # the parameter might not be good, it would be better to get the values from the model
   # annotate("text", x = 69, y = 340, label = "log(y) = 1.65 + 0.29*log(x)", col = "#CCBB44")+
-  # annotate("text", x = 52, y = 300, label = "R² = 0.17", col = "#CCBB44")+
+  # annotate("text", x = 52, y = 300, label = "RÂ² = 0.17", col = "#CCBB44")+
   
   
   
