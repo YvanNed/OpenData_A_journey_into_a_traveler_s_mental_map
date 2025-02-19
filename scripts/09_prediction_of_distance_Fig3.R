@@ -93,7 +93,7 @@ performance::check_model(lm_dist_duravespd)
 summary(lm_dist_duravespd)
 report(lm_dist_duravespd)
 # It seems that participant are using their knowledge about the total distance !!!
-# adjusted r² are as ranked as followed:
+# adjusted rÂ² are as ranked as followed:
 # dur_ratio*distknw > dur_only = fixedspd*dur > ave_spd*dur > maxspd*dur
 
 # selection of the best model with AIC (not sure it makes any sense but we will think about it later)
@@ -195,7 +195,7 @@ report(lm_dur_distavespd)
 # performance::compare_performance(lm_dur_distavespd, lm_durspdfixed, lm_durknw)
 
 # It seems that participant are using their knowledge about the total duration !!!
-# adjusted r² are as ranked as followed:
+# adjusted rÂ² are as ranked as followed:
 # dist_ratio*durknw > dist_only = dist/fixedspd > maxspd*dur > ave_spd*dur 
 
 rawdur_as_preddur <- ggplot() +
@@ -261,7 +261,7 @@ pred_spd_as_est_spd <- ggplot() +
   # add regression line manually because when I set limits to the plot it affect the coefficients of the regression curves
   # geom_abline(intercept = 205, slope = 3.09e-03, color = "blue")+
   annotate("text", x = 150, y = 450, label = "y = 205 + 3.09e-03 x", col = "grey", size = 6)+
-  annotate("text", x = 180, y = 415, label = "R² = 2.85e-05 (p = 0.934)", col = "grey", size = 6)+
+  annotate("text", x = 180, y = 415, label = "RÂ² = 2.85e-05 (p = 0.934)", col = "grey", size = 6)+
   # 
   # add the point of subjective equality
   # geom_segment(aes(x = 0, y = spd_mean_point_of_intersect, xend = spd_mean_point_of_intersect , yend = spd_mean_point_of_intersect), linetype = "dashed", color = "red") +
@@ -318,11 +318,11 @@ spd_type_as_obj_spd <- ggplot() +
   # estimated
   geom_abline(intercept = 162, slope = 0.25, color = "#F8766D", size=0.8)+
   annotate("text", x = 125, y = 50, label = "y = 167 + 0.25 x", col = "#F8766D", size = 8)+
-  annotate("text", x = 125, y = 30, label = "R² = 0.062 (p < 0.05)", col = "#F8766D", size = 8)+
+  annotate("text", x = 125, y = 30, label = "RÂ² = 0.062 (p < 0.05)", col = "#F8766D", size = 8)+
   # predicted
   geom_abline(intercept = 211, slope = 0.067, color = "#00BFC4", size=0.8)+
   annotate("text", x = 300, y = 50, label = "y = 211 + 0.067 x", col = "#00BFC4", size = 8)+
-  annotate("text", x = 300, y = 30, label = "R² = 0.0015 (p = 0.55)", col = "#00BFC4", size = 8)+
+  annotate("text", x = 300, y = 30, label = "RÂ² = 0.0015 (p = 0.55)", col = "#00BFC4", size = 8)+
   
   # add the point of subjective equality
   # geom_segment(aes(x = 0, y = spd_mean_point_of_intersect, xend = spd_mean_point_of_intersect , yend = spd_mean_point_of_intersect), linetype = "dashed", color = "red") +
@@ -378,20 +378,20 @@ cor_rme_distdur
 # remove na
 count_both_below_1 <- sum(df_dur$RME < 1 & df_dur$RME_dist < 1, na.rm = TRUE)
 
-# Comptez le nombre de lignes où les deux colonnes sont au-dessus de 1
+# Comptez le nombre de lignes oÃ¹ les deux colonnes sont au-dessus de 1
 count_both_above_1 <- sum(df_dur$RME > 1 & df_dur$RME_dist > 1, na.rm = TRUE)
 
-# Comptez le nombre de lignes où une colonne est plus grande que 1 et l'autre plus petite
+# Comptez le nombre de lignes oÃ¹ une colonne est plus grande que 1 et l'autre plus petite
 count_one_above_one_below <- sum((df_dur$RME > 1 & df_dur$RME_dist < 1), na.rm = TRUE)
 
-# Comptez le nombre de lignes où une colonne est plus grande que 1 et l'autre plus petite
+# Comptez le nombre de lignes oÃ¹ une colonne est plus grande que 1 et l'autre plus petite
 count_one_below_one_above <- sum((df_dur$RME < 1 & df_dur$RME_dist > 1), na.rm = TRUE)
 
-# Affichez les résultats
-cat("Nombre de participant sousestimant durée et distance :", count_both_below_1, "\n")
-cat("Nombre de participant surestimant durée et distance :", count_both_above_1, "\n")
-cat("Nombre de participant surestimant la durée et sousestimant la distance :", count_one_above_one_below, "\n")
-cat("Nombre de participant sousestimant la durée et surestimant la distance :", count_one_below_one_above, "\n")
+# Affichez les rÃ©sultats
+cat("Nombre de participant sousestimant durÃ©e et distance :", count_both_below_1, "\n")
+cat("Nombre de participant surestimant durÃ©e et distance :", count_both_above_1, "\n")
+cat("Nombre de participant surestimant la durÃ©e et sousestimant la distance :", count_one_above_one_below, "\n")
+cat("Nombre de participant sousestimant la durÃ©e et surestimant la distance :", count_one_below_one_above, "\n")
 
 
 gridExtra::grid.arrange(pred_spd_as_est_spd, cor_rme_distdur, rawdist_as_preddist, rawdur_as_preddur,  nrow = 2, ncol = 2)
