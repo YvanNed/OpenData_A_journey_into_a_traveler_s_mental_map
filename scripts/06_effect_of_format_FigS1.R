@@ -159,7 +159,7 @@ dur_scatter
 # dur_as_objest_format
 # ==> the two regression lines overlap perfectly (as suggested by their very high correlation)
 # ==> Note for later: the regression point seems not at the middle of the travel, but it could be highly influenced by the outliers
-# I am gonna check the regression point with the outliers and remove them if needed (either cook distance, or arbitrary threshold "‡ la" Balci)
+# I am gonna check the regression point with the outliers and remove them if needed (either cook distance, or arbitrary threshold "√† la" Balci)
 # Should I do this after I checked the effect of format ? maybe yes
 
 # checking the effect of format on relative estimation, and its interaction with train travel factors (speed episodes, orientation, objective magnitude)
@@ -203,19 +203,19 @@ dur_aov <- aov(RE_est ~ format * orientation * ep_est, data = df_dur)
 summary(dur_aov)
 report(dur_aov) %>% as.data.frame() # comment the last part to have a written summary
 # check assumptions
-# VÈrifier l'indÈpendance des observations
+# V√©rifier l'ind√©pendance des observations
 durbinWatsonTest(dur_aov)
 
-# VÈrifier la normalitÈ des rÈsidus
+# V√©rifier la normalit√© des r√©sidus
 shapiro.test(residuals(dur_aov))
-# ==> les rÈsidus sont pas normals
+# ==> les r√©sidus sont pas normals
 
-# VÈrifier l'homogÈnÈitÈ des variances
+# V√©rifier l'homog√©n√©it√© des variances
 car::leveneTest(residuals(dur_aov) ~ format * orientation * ep_est, data = na.omit(df_dur))
 df_dur$combined_factor <- interaction(df_dur$format, df_dur$orientation, df_dur$ep_est)
 bartlett.test(RE_est ~ combined_factor, data = df_dur)
-# ==> l'homogÈnÈitÈ des variances n'est pas respectÈ...
-# je vais rester sur le modËle linÈaire pcq les hypothËses sont pas respectÈ pour l'anova
+# ==> l'homog√©n√©it√© des variances n'est pas respect√©...
+# je vais rester sur le mod√®le lin√©aire pcq les hypoth√®ses sont pas respect√© pour l'anova
 
 
 
