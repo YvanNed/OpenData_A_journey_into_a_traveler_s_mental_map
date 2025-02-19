@@ -1,5 +1,5 @@
 ##################################################################################################################
-# this script allows to open the csv files containing raphaël train data and reformat them (so that it will fit the rest of my code)
+# this script allows to open the csv files containing raphaÃ«l train data and reformat them (so that it will fit the rest of my code)
 ##################################################################################################################
 
 library(RColorBrewer)
