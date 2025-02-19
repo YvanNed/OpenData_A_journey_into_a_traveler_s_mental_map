@@ -194,7 +194,7 @@ performance::check_model(lm_dist_duravespd)
 summary(lm_dist_duravespd)
 report(lm_dist_duravespd)
 # It seems that participant are using their knowledge about the total distance !!!
-# adjusted r² are as ranked as followed:
+# adjusted rÂ² are as ranked as followed:
 # dur_ratio*distknw > dur_only = fixedspd*dur > ave_spd*dur > maxspd*dur
 
 # selection of the best model with AIC (it does not make any  sense since it is not an incrementation of model)
@@ -217,7 +217,7 @@ rawdist_as_preddist <- ggplot() +
   geom_smooth(data = df_dist, aes(pred_dist_knw, c(ME),),  method = lm, se = TRUE,  color = "#c51b7d", fill ="#c51b7d") +
   # stat_regline_equation(label.x = 20, label.y = 600, data = df_dist, aes(pred_dist_knw, c(ME), label = ..eq.label..), color = "#66c2a5") + # the parameter might not be good, it would be better to get the values from the model 
   # stat_regline_equation(label.x = 20, label.y = 580, data = df_dist, aes(pred_dist_knw, c(ME), label = ..rr.label..), color = "#c51b7d", size=6) +  # the parameter might not be good, it would be better to get the values from the model
-  annotate("text", x = 130, y = 500, label = "Knowledge: R² = 0.88", col = "#c51b7d", size = 4)+
+  annotate("text", x = 130, y = 500, label = "Knowledge: RÂ² = 0.88", col = "#c51b7d", size = 4)+
   
   theme_classic() +
   
@@ -225,7 +225,7 @@ rawdist_as_preddist <- ggplot() +
   geom_point(data = df_dist, aes(pred_dist_spd, c(ME)), color = "#b8e186", alpha = 0.3) +
   # add regression line and equation
   geom_smooth(data = df_dist, aes(pred_dist_spd, c(ME),),  method = lm, se = TRUE, color = "#b8e186", fill ="#b8e186") +
-  annotate("text", x = 150, y = 540, label = "Maximum speed: R² = 0.67", col = "#b8e186", size = 4)+
+  annotate("text", x = 150, y = 540, label = "Maximum speed: RÂ² = 0.67", col = "#b8e186", size = 4)+
   
   # stat_regline_equation(label.x = 20, label.y = 500, data = df_dist, aes(pred_dist_spdfixed, c(ME), label = ..eq.label..), color = "#fc8d62") + # the parameter might not be good, it would be better to get the values from the model 
   # stat_regline_equation(label.x = 20, label.y = 530, data = df_dist, aes(pred_dist_spd, c(ME), label = ..rr.label..), color = "#b8e186", size=6) +  # the parameter might not be good, it would be better to get the values from the model
@@ -234,7 +234,7 @@ rawdist_as_preddist <- ggplot() +
   geom_point(data = df_dist, aes(preddist_duravespd, c(ME)), color = "grey", alpha = 0.3) +
   # add regression line and equation
   geom_smooth(data = df_dist, aes(preddist_duravespd, c(ME),),  method = lm, se = TRUE, color = "grey", fill = "grey") +
-  annotate("text", x = 150, y = 580, label = "Estimated speed: R² = 0.69", col = "grey", size=4)+
+  annotate("text", x = 150, y = 580, label = "Estimated speed: RÂ² = 0.69", col = "grey", size=4)+
   
   # stat_regline_equation(label.x = 20, label.y = 400, data = df_dist, aes(preddist_duravespd, c(ME), label = ..eq.label..), color = "#8da0cb") + # the parameter might not be good, it would be better to get the values from the model 
   # stat_regline_equation(label.x = 20, label.y = 480, data = df_dist, aes(preddist_duravespd, c(ME), label = ..rr.label..), color = "grey", size=6) +  # the parameter might not be good, it would be better to get the values from the model
@@ -304,7 +304,7 @@ report(lm_dur_distavespd)
 
 # => the pattern is different for duration if only numeric estimation are used 
 
-# adjusted r² are as ranked as followed:
+# adjusted rÂ² are as ranked as followed:
 # dist_only = dist/fixedspd ~= dist_ratio*durknw >  maxspd*dur > ave_spd*dur 
 
 rawdur_as_preddur <- ggplot() +
@@ -314,7 +314,7 @@ rawdur_as_preddur <- ggplot() +
   geom_smooth(data = df_dur, aes(pred_dur_knw, c(ME),),  method = lm, se = TRUE, color = "#c51b7d", fill = "#c51b7d") +
   # stat_regline_equation(label.x = 10, label.y = 170, data = df_dur, aes(pred_dur_knw, c(ME), label = ..eq.label..), color = "#66c2a5") + # the parameter might not be good, it would be better to get the values from the model
   # stat_regline_equation(label.x = 10, label.y = 160, data = df_dur, aes(pred_dur_knw, c(ME), label = ..rr.label..), color = "#c51b7d", size=6) +  # the parameter might not be good, it would be better to get the values from the model
-  annotate("text", x = 35, y = 140, label = "Knowledge: R² = 0.77", col = "#c51b7d", size = 4)+
+  annotate("text", x = 35, y = 140, label = "Knowledge: RÂ² = 0.77", col = "#c51b7d", size = 4)+
   
   theme_classic() +
   
@@ -324,7 +324,7 @@ rawdur_as_preddur <- ggplot() +
   geom_smooth(data = df_dur, aes(pred_dur_spd, c(ME),),  method = lm, se = TRUE, color = "#b8e186", fill = "#b8e186") +
   # stat_regline_equation(label.x = 10, label.y = 150, data = df_dur, aes(pred_dur_spdfixed, c(ME), label = ..eq.label..), color = "#fc8d62") + # the parameter might not be good, it would be better to get the values from the model 
   # stat_regline_equation(label.x = 10, label.y = 145, data = df_dur, aes(pred_dur_spd, c(ME), label = ..rr.label..), color = "#b8e186", size=6) +  # the parameter might not be good, it would be better to get the values from the model
-  annotate("text", x = 45, y = 150, label = "Maximum speed: R² = 0.68", col = "#b8e186", size = 4)+
+  annotate("text", x = 45, y = 150, label = "Maximum speed: RÂ² = 0.68", col = "#b8e186", size = 4)+
   
   # add the predicted distance based on averaged speed
   geom_point(data = df_dur, aes(preddur_distavespd, c(ME)), color = "grey", alpha = 0.3) +
@@ -332,7 +332,7 @@ rawdur_as_preddur <- ggplot() +
   geom_smooth(data = df_dur, aes(preddur_distavespd, c(ME),),  method = lm, se = TRUE, color = "grey", fill ="grey") +
   # stat_regline_equation(label.x = 10, label.y = 130, data = df_dur, aes(preddur_distavespd, c(ME), label = ..eq.label..), color = "#8da0cb") + # the parameter might not be good, it would be better to get the values from the model 
   # stat_regline_equation(label.x = 10, label.y = 130, data = df_dur, aes(preddur_distavespd, c(ME), label = ..rr.label..), color = "grey", size=6) +  # the parameter might not be good, it would be better to get the values from the model
-  annotate("text", x = 45, y = 160, label = "Estimated speed: R² = 0.69", col = "grey", size = 4)+
+  annotate("text", x = 45, y = 160, label = "Estimated speed: RÂ² = 0.69", col = "grey", size = 4)+
   
   
   # add the point of subjective equality
@@ -374,7 +374,7 @@ pred_spd_as_est_spd <- ggplot() +
   # add regression line manually because when I set limits to the plot it affect the coefficients of the regression curves
   # geom_abline(intercept = 205, slope = 3.09e-03, color = "blue")+
   annotate("text", x = 150, y = 450, label = "y = 205 + 3.09e-03 x", col = "grey", size = 6)+
-  annotate("text", x = 180, y = 415, label = "R² = 2.85e-05 (p = 0.934)", col = "grey", size = 6)+
+  annotate("text", x = 180, y = 415, label = "RÂ² = 2.85e-05 (p = 0.934)", col = "grey", size = 6)+
   # 
   # add the point of subjective equality
   # geom_segment(aes(x = 0, y = spd_mean_point_of_intersect, xend = spd_mean_point_of_intersect , yend = spd_mean_point_of_intersect), linetype = "dashed", color = "red") +
@@ -431,11 +431,11 @@ spd_type_as_obj_spd <- ggplot() +
   # estimated
   geom_abline(intercept = 162, slope = 0.25, color = "#F8766D", size=0.8)+
   annotate("text", x = 125, y = 50, label = "y = 167 + 0.25 x", col = "#F8766D", size = 8)+
-  annotate("text", x = 125, y = 30, label = "R² = 0.062 (p < 0.05)", col = "#F8766D", size = 8)+
+  annotate("text", x = 125, y = 30, label = "RÂ² = 0.062 (p < 0.05)", col = "#F8766D", size = 8)+
   # predicted
   geom_abline(intercept = 211, slope = 0.067, color = "#00BFC4", size=0.8)+
   annotate("text", x = 300, y = 50, label = "y = 211 + 0.067 x", col = "#00BFC4", size = 8)+
-  annotate("text", x = 300, y = 30, label = "R² = 0.0015 (p = 0.55)", col = "#00BFC4", size = 8)+
+  annotate("text", x = 300, y = 30, label = "RÂ² = 0.0015 (p = 0.55)", col = "#00BFC4", size = 8)+
   
   # add the point of subjective equality
   # geom_segment(aes(x = 0, y = spd_mean_point_of_intersect, xend = spd_mean_point_of_intersect , yend = spd_mean_point_of_intersect), linetype = "dashed", color = "red") +
@@ -491,20 +491,20 @@ cor_rme_distdur
 # remove na
 count_both_below_1 <- sum(df_dur$RME < 1 & df_dur$RME_dist < 1, na.rm = TRUE)
 
-# Comptez le nombre de lignes où les deux colonnes sont au-dessus de 1
+# Comptez le nombre de lignes oÃ¹ les deux colonnes sont au-dessus de 1
 count_both_above_1 <- sum(df_dur$RME > 1 & df_dur$RME_dist > 1, na.rm = TRUE)
 
-# Comptez le nombre de lignes où une colonne est plus grande que 1 et l'autre plus petite
+# Comptez le nombre de lignes oÃ¹ une colonne est plus grande que 1 et l'autre plus petite
 count_one_above_one_below <- sum((df_dur$RME > 1 & df_dur$RME_dist < 1), na.rm = TRUE)
 
-# Comptez le nombre de lignes où une colonne est plus grande que 1 et l'autre plus petite
+# Comptez le nombre de lignes oÃ¹ une colonne est plus grande que 1 et l'autre plus petite
 count_one_below_one_above <- sum((df_dur$RME < 1 & df_dur$RME_dist > 1), na.rm = TRUE)
 
-# Affichez les résultats
-cat("Nombre de participant sousestimant durée et distance :", count_both_below_1, "\n")
-cat("Nombre de participant surestimant durée et distance :", count_both_above_1, "\n")
-cat("Nombre de participant surestimant la durée et sousestimant la distance :", count_one_above_one_below, "\n")
-cat("Nombre de participant sousestimant la durée et surestimant la distance :", count_one_below_one_above, "\n")
+# Affichez les rÃ©sultats
+cat("Nombre de participant sousestimant durÃ©e et distance :", count_both_below_1, "\n")
+cat("Nombre de participant surestimant durÃ©e et distance :", count_both_above_1, "\n")
+cat("Nombre de participant surestimant la durÃ©e et sousestimant la distance :", count_one_above_one_below, "\n")
+cat("Nombre de participant sousestimant la durÃ©e et surestimant la distance :", count_one_below_one_above, "\n")
 
 
 gridExtra::grid.arrange(pred_spd_as_est_spd, cor_rme_distdur, rawdist_as_preddist, rawdur_as_preddur,  nrow = 2, ncol = 2)
