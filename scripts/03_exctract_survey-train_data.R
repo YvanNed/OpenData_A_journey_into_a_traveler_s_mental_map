@@ -240,7 +240,7 @@ for (i in 1:nrow(df_survey)) { # loop over the number of participants
     
     if (df_survey$Date[i]==df_sncf$Jour.circulation[1]){ # Select the train data file with the corresponding date 
       
-      if (floor(df_sncf$Depart.theo.SAT[1]) < 14 && floor(df_survey$departure[i]) < 14) { # select the train data file with the corresponding time (by using the "partie entiËre" of the hour)
+      if (floor(df_sncf$Depart.theo.SAT[1]) < 14 && floor(df_survey$departure[i]) < 14) { # select the train data file with the corresponding time (by using the "partie enti√®re" of the hour)
         
         acc_end = dict[[name]][1]
         dec_str = dict[[name]][2]
@@ -278,7 +278,7 @@ for (i in 1:nrow(df_survey)) { # loop over the number of participants
           df_survey$ep_spd[i] <- find_spd_ep(df_sncf$Duration[find_obj_value(df_survey$rep_spd[i], df_sncf$Heure.franchissement)[1]], acc_end, dec_str)
         }
         
-      } else if (floor(df_sncf$Depart.theo.SAT[1]) > 14 && floor(df_survey$departure[i]) > 14) { # select the train data file with the corresponding time (by using the "partie entiËre" of the hour and to contrast the morning vs afternoon)
+      } else if (floor(df_sncf$Depart.theo.SAT[1]) > 14 && floor(df_survey$departure[i]) > 14) { # select the train data file with the corresponding time (by using the "partie enti√®re" of the hour and to contrast the morning vs afternoon)
         
         acc_end = dict[[name]][1]
         dec_str = dict[[name]][2]
